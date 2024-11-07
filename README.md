@@ -6,3 +6,12 @@ L’obiettivo di questo tirocinio è approfondire la conoscenza della libreria L
 Durante il tirocinio infatti, l'attenzione sarà posta inizialmente alla comprensione teorica dei concetti chiave di Leaflet, che presenta per la maggior parte elementi nuovi e da apprendere, come Javascript, HTML e nodejs. Successivamente, si procederà con la creazione di un prototipo, sfruttando le competenze acquisite e applicando in modo pratico quanto appreso.
 
 Il monte ore di lavoro è fissato a 150, con aggiornamenti periodici sullo stato del caso studio.
+
+Aggiornamento ore di lavoro: 25/150.
+Attività coinvolte:
+  1) Introduzione teorica a Leaflet (ricerca e studio della tecnologia);
+  2) Stesura Report riassunto di quanto appreso;
+  3) Creazione Repository GitHub e collegamento con Netiflty (free web hosting);
+  4) Creazione di un codice d'esempio per provare Leaflet (tramite tutorial ufficiale);
+  5) Apprendimento basi di HTML (tramite libro di testo e apprendimento guidato con https://www.freecodecamp.org/);
+  6) Sviluppo sito vero e proprio con un mix di quanto visto finora;
