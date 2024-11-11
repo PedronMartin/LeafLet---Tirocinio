@@ -16,3 +16,4 @@ Attività coinvolte:
   4) Creazione di un codice d'esempio per provare Leaflet (tramite tutorial ufficiale);
   5) Apprendimento basi di HTML (tramite libro di testo e apprendimento guidato con https://www.freecodecamp.org/);
   6) Sviluppo sito vero e proprio con un mix di quanto visto finora;
+  7) Apprendimento basi di JavaScript;
