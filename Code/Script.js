@@ -1,6 +1,3 @@
-//importazione libreria Leaflet JS sull'elemento L
-import * as L from 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-
 //creazione mappa centrata sull'Univesità di Verona
 var map = L.map('map').setView([45.40342369717214, 10.998998624064418], 16);
 
