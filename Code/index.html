@@ -17,10 +17,6 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin="">
     </script>
-
-    <!-- script JavaScript -->
-    <!-- module specifica il codice JS come modulo a sè, con variabili e dati non accessibili dal Browser -->
-    <script src = "Script.js"></script>
 </head>
 
 <!-- corpo pagina -->
@@ -58,12 +54,29 @@
             </style>
 
             <!-- Script JS -->
-             <script src = "Script.js"></script>
+             <script src = "CaVignal.js"></script>
 
             <!-- descrizione mappa e link GitHub impostato per aprirsi in una nuova finestra -->
             <p>Questo codice crea una mappa centrata su Verona, con un marker e un cerchio, 
                 e con la possibilità di cliccare sulla mappa per ottenere le coordinate del punto cliccato.</p>
             <p>Per maggiori dettagli implementativi, si rimanda alla <a target = "_blank" href = "https://github.com/PedronMartin/LeafLet---Tirocinio/tree/main" >Repository Github con i codici sorgente</a></p>
+        </section>
+
+        <section>
+            <h4>Geolocalizzazione</h4>
+            <p>La seguente mappa invece imposta un popup all'attuale posizione dell'utilizzatore.</p>
+
+            <!-- Identificatore e nuova zona per mappa -->
+            <div id="map"></div>
+
+            <!-- CSS -->
+            <style>
+               #map { height: 250px;
+                      width: 50%; }
+            </style>
+
+            <!-- Script JS -->
+             <script src = "YourLocation.js"></script>
         </section>
     </main>
    </body>
