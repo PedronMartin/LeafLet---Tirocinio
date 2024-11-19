@@ -11,7 +11,7 @@ var map = L.map('map').fitWorld();
 
 //collegamento OpenStreetMaps
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 18,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
@@ -30,12 +30,25 @@ function onLocationFound(e) {
     L.circle(e.latlng, radius).addTo(map);
 
     //livello di zoom massimo sull'utente
-    map.setView(e.latlng, 19);
+    map.setView(e.latlng, 18);
 }
 
-//funzione di errore
+//funzione di errore (sulla base dell'errore generato dalla localizzazione)
 function onLocationError(e) {
-    alert("C'è un problema con la tua geolocalizzazione.");
+    switch (e.code) {
+        case e.PERMISSION_DENIED:
+            alert("Permesso di geolocalizzazione negato.");
+            break;
+        case e.POSITION_UNAVAILABLE:
+            alert("Informazioni sulla posizione non disponibili. Controlla segnale GPS o connessione a Internet.");
+            break;
+        case e.TIMEOUT:
+            alert("La richiesta di geolocalizzazione ha superato il tempo limite. Prova a ricaricare la pagina.");
+            break;
+        default:
+            alert("Errore di geolocalizzazione generico. Riprova.");
+            break;
+    }
 }
 
 //funzione richiamata al premere su un popup
