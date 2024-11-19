@@ -6,40 +6,47 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-//creazione mappa centrata sull'Univesità di Verona
-var map = L.map('map').setView([45.40342369717214, 10.998998624064418], 16);
+//creazione mappa. fitWOrld mostra l'intero mondo sulla base dello spazio concesso nel layout della pagina
+const map = L.map('map').fitWorld();
 
-//carica OpenStreetMap e proprietà
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+//collegamento OpenStreetMaps
+const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 22,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-//aggiunge marker su Ca'Vignal
-var marker = L.marker([45.40342369717214, 10.998998624064418]).addTo(map);
+//funzione che preleva le coordinate attuali dell'utente e imposta un marker e un cerchio attorno
+function onLocationFound(e) {
+    //'e' è l'elemento Leaflet che contiene la posizione dell'utente
+    //accuracy rappresenta l'accuratezza del dato prelevato dalla geolocalizzazione
+    //con round della lib Math, arrontondo il valore ad intero
+    var radius = Math.round(e.accuracy);
 
-//aggiunge cerchio su Sede di Borgo Roma
-var circle = L.circle([45.40342369717214, 10.998998624064418], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.4,
-    radius: 250
-}).addTo(map);
+    //crea Marker e carica subito il popup
+    L.marker(e.latlng).addTo(map)
+        .bindPopup("Grazie per aver condiviso la tua posizione.\nTu sei qui!").openPopup();
 
-//crea popup relativi agli oggetti
-marker.bindPopup("<b>Ca'Vignal").openPopup();
-circle.bindPopup("Università degli Studi di Verona");
+    //cerchio sull'area indicata dall'accuratezza del dato prelevato
+    L.circle(e.latlng, radius).addTo(map);
+}
 
-//aggiunge popup alla mappa
-var popup = L.popup();
+//funzione di errore
+function onLocationError(e) {
+    alert("C'è un problema con la tua geolocalizzazione.");
+}
 
 //funzione richiamata al premere su un popup
 function onMapClick(e) {
     popup
-        .setLatLng(e.latlng)
+        .setLatLng(Math.round(e.latlng))
         .setContent("Hai premuto la mappa a " + e.latlng.toString())
         .openOn(map);
 }
 
-//attivazione funzione
+//caricamento funzioni nella mappa
+map.on('locationfound', onLocationFound);
+map.on('locationerror', onLocationError);
 map.on('click', onMapClick);
+
+//setting zoom e vista
+map.locate({setView: true, maxZoom: 22});
