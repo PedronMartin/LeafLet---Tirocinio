@@ -10,17 +10,22 @@ const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 //funzione che preleva le coordinate attuali dell'utente e imposta un marker e un cerchio attorno
 function onLocationFound(e) {
-    var radius = e.accuracy;
+    //'e' è l'elemento Leaflet che contiene la posizione dell'utente
+    //accuracy rappresenta l'accuratezza del dato prelevato dalla geolocalizzazione
+    //con round della lib Math, arrontondo il valore ad intero
+    var radius = Math.round(e.accuracy);
 
+    //crea Marker e carica subito il popup
     L.marker(e.latlng).addTo(map)
-        .bindPopup("Sei a " + radius + " metri da questo punto!").openPopup();
+        .bindPopup("Grazie per aver condiviso la tua posizione.\nTu sei qui!").openPopup();
 
-    //L.circle(e.latlng, radius).addTo(map);
+    //cerchio sull'area indicata dall'accuratezza del dato prelevato
+    L.circle(e.latlng, radius).addTo(map);
 }
 
 //funzione di errore
 function onLocationError(e) {
-    alert(e.message);
+    alert("C'è un problema con la tua geolocalizzazione.");
 }
 
 //caricamento funzioni nella mappa
