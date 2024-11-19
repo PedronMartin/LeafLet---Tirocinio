@@ -11,7 +11,7 @@ var map = L.map('map').fitWorld();
 
 //collegamento OpenStreetMaps
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 22,
+    maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
@@ -28,6 +28,9 @@ function onLocationFound(e) {
 
     //cerchio sull'area indicata dall'accuratezza del dato prelevato
     L.circle(e.latlng, radius).addTo(map);
+
+    //livello di zoom massimo sull'utente
+    map.setView(e.latlng, 19);
 }
 
 //funzione di errore
@@ -47,6 +50,3 @@ function onMapClick(e) {
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
 map.on('click', onMapClick);
-
-//setting zoom e vista
-map.locate({setView: true, maxZoom: 16});
