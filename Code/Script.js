@@ -49,4 +49,4 @@ map.on('locationerror', onLocationError);
 map.on('click', onMapClick);
 
 //setting zoom e vista
-map.locate({setView: true, maxZoom: 22});
+map.locate({setView: true, maxZoom: 16});
