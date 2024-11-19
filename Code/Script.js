@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //creazione mappa. fitWOrld mostra l'intero mondo sulla base dello spazio concesso nel layout della pagina
-const map = L.map('map').fitWorld();
+var map = L.map('map').fitWorld();
 
 //collegamento OpenStreetMaps
-const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 22,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
