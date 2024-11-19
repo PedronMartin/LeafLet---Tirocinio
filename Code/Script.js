@@ -6,63 +6,40 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-//creazione mappa. fitWOrld mostra l'intero mondo sulla base dello spazio concesso nel layout della pagina
-var map = L.map('map').fitWorld();
+//creazione mappa centrata sull'Univesità di Verona
+var map = L.map('map').setView([45.40342369717214, 10.998998624064418], 16);
 
-//collegamento OpenStreetMaps
+//carica OpenStreetMap e proprietà
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
+    maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-//funzione che preleva le coordinate attuali dell'utente e imposta un marker e un cerchio attorno
-function onLocationFound(e) {
-    //'e' è l'elemento Leaflet che contiene la posizione dell'utente
-    //accuracy rappresenta l'accuratezza del dato prelevato dalla geolocalizzazione
-    //con round della lib Math, arrontondo il valore ad intero
-    var radius = Math.round(e.accuracy);
+//aggiunge marker su Ca'Vignal
+var marker = L.marker([45.40342369717214, 10.998998624064418]).addTo(map);
 
-    //crea Marker e carica subito il popup
-    L.marker(e.latlng).addTo(map)
-        .bindPopup("Grazie per aver condiviso la tua posizione.\nTu sei qui!").openPopup();
+//aggiunge cerchio su Sede di Borgo Roma
+var circle = L.circle([45.40342369717214, 10.998998624064418], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.4,
+    radius: 250
+}).addTo(map);
 
-    //cerchio sull'area indicata dall'accuratezza del dato prelevato
-    L.circle(e.latlng, radius).addTo(map);
+//crea popup relativi agli oggetti
+marker.bindPopup("<b>Ca'Vignal").openPopup();
+circle.bindPopup("Università degli Studi di Verona");
 
-    //livello di zoom massimo sull'utente
-    map.setView(e.latlng, 18);
-}
-
-//funzione di errore (sulla base dell'errore generato dalla localizzazione)
-function onLocationError(e) {
-    switch (e.code) {
-        case e.PERMISSION_DENIED:
-            alert("Permesso di geolocalizzazione negato.");
-            break;
-        case e.POSITION_UNAVAILABLE:
-            alert("Informazioni sulla posizione non disponibili. Controlla segnale GPS o connessione a Internet.");
-            break;
-        case e.TIMEOUT:
-            alert("La richiesta di geolocalizzazione ha superato il tempo limite. Prova a ricaricare la pagina.");
-            break;
-        default:
-            alert("Errore di geolocalizzazione generico. Riprova.");
-            break;
-    }
-}
+//aggiunge popup alla mappa
+var popup = L.popup();
 
 //funzione richiamata al premere su un popup
 function onMapClick(e) {
     popup
-        .setLatLng(Math.round(e.latlng))
+        .setLatLng(e.latlng)
         .setContent("Hai premuto la mappa a " + e.latlng.toString())
         .openOn(map);
 }
 
-//caricamento funzioni nella mappa
-map.on('locationfound', onLocationFound);
-map.on('locationerror', onLocationError);
+//attivazione funzione
 map.on('click', onMapClick);
-
-//setting richiesta di geolocalizzazione al dispositivo
-map.locate({setView: true, maxZoom: 16, timeout: 10000});
