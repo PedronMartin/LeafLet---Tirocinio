@@ -1,3 +1,11 @@
+//per prima cosa interrogo il dispositivo dell'utente per vedere se è Mobile
+document.addEventListener("DOMContentLoaded", function() {
+    if (/Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent)) {
+        //se il dispositivo è mobile, fai redirect alla versione mobile
+        window.location.href = "/Mobile/indexMobile.html";
+    }
+});
+
 //creazione mappa centrata sull'Univesità di Verona
 var map = L.map('map').setView([45.40342369717214, 10.998998624064418], 16);
 
