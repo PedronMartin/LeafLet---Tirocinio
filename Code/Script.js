@@ -50,3 +50,6 @@ function onMapClick(e) {
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
 map.on('click', onMapClick);
+
+//setting zoom e vista
+map.locate({setView: true, maxZoom: 16});
