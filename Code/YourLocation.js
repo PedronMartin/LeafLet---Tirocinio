@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 */
 
 //creazione mappa. fitWOrld mostra l'intero mondo sulla base dello spazio concesso nel layout della pagina
-var map = L.map('map').fitWorld();
+var map = L.map('map2').fitWorld();
 
 //collegamento OpenStreetMaps
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
