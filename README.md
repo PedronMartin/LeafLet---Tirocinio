@@ -17,3 +17,6 @@ Attività coinvolte:
   5) Apprendimento basi di HTML (tramite libro di testo e apprendimento guidato con https://www.freecodecamp.org/);
   6) Sviluppo sito vero e proprio con un mix di quanto visto finora;
   7) Apprendimento basi di JavaScript;
+  8) Creazione Script JS separati da HTML, con richiamo interno e che permetta facili modifiche;
+  9) Aggiunta seconda mappa di geolocalizzazione dell'utente, con gestione dell'errore se la posizione non viene concessa e cerchio che rappresenta l'accuratezza del dato raccolto (elemento 'e' della libreria);
+  10) 
