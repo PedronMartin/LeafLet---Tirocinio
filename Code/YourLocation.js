@@ -13,7 +13,7 @@ var map = L.map('map2').fitWorld();
 
 //collegamento OpenStreetMaps
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
+    maxZoom: 17,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
@@ -32,7 +32,7 @@ function onLocationFound(e) {
     L.circle(e.latlng, radius).addTo(map);
 
     //livello di zoom massimo sull'utente
-    map.setView(e.latlng, 18);
+    map.setView(e.latlng, 17);
 }
 
 //funzione di errore (sulla base dell'errore generato dalla localizzazione)
@@ -67,4 +67,4 @@ map.on('locationerror', onLocationError);
 map.on('click', onMapClick);
 
 //setting richiesta di geolocalizzazione al dispositivo
-map.locate({setView: true, maxZoom: 16, timeout: 10000});
+map.locate({setView: true, maxZoom: 17, timeout: 10000});
