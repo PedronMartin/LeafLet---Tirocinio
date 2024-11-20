@@ -8,7 +8,7 @@ Durante il tirocinio infatti, l'attenzione sarà posta inizialmente alla compren
 
 Il monte ore di lavoro è fissato a 150, con aggiornamenti periodici sullo stato del caso studio.
 
-Aggiornamento ore di lavoro: 30/150.
+Aggiornamento ore di lavoro: 50/150.
 Attività coinvolte:
   1) Introduzione teorica a Leaflet (ricerca e studio della tecnologia);
   2) Stesura Report riassunto di quanto appreso;
