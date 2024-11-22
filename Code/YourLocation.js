@@ -9,13 +9,13 @@ document.addEventListener("DOMContentLoaded", function() {
 */
 
 //creazione mappa. fitWOrld mostra l'intero mondo sulla base dello spazio concesso nel layout della pagina
-var map = L.map('map2').fitWorld();
+var map2 = L.map('map2').fitWorld();
 
 //collegamento OpenStreetMaps
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 17,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+}).addTo(map2);
 
 //funzione che preleva le coordinate attuali dell'utente e imposta un marker e un cerchio attorno
 function onLocationFound(e) {
@@ -25,14 +25,14 @@ function onLocationFound(e) {
     var radius = Math.round(e.accuracy);
 
     //crea Marker e carica subito il popup
-    L.marker(e.latlng).addTo(map)
+    L.marker(e.latlng).addTo(map2)
         .bindPopup("Grazie per aver condiviso la tua posizione.\nTu sei qui!").openPopup();
 
     //cerchio sull'area indicata dall'accuratezza del dato prelevato
-    L.circle(e.latlng, radius).addTo(map);
+    L.circle(e.latlng, radius).addTo(map2);
 
     //livello di zoom massimo sull'utente
-    map.setView(e.latlng, 17);
+    map2.setView(e.latlng, 17);
 }
 
 //funzione di errore (sulla base dell'errore generato dalla localizzazione)
@@ -55,16 +55,17 @@ function onLocationError(e) {
 
 //funzione richiamata al premere su un popup
 function onMapClick(e) {
+    var pos = Math.round(e.latlng);
     popup
-        .setLatLng(Math.round(e.latlng))
-        .setContent("Hai premuto la mappa a " + e.latlng.toString())
-        .openOn(map);
+        .setLatLng(pos)
+        .setContent("Hai premuto la mappa a " + pos)
+        .openOn(map2);
 }
 
 //caricamento funzioni nella mappa
-map.on('locationfound', onLocationFound);
-map.on('locationerror', onLocationError);
-map.on('click', onMapClick);
+map2.on('locationfound', onLocationFound);
+map2.on('locationerror', onLocationError);
+map2.on('click', onMapClick);
 
 //setting richiesta di geolocalizzazione al dispositivo
-map.locate({setView: true, maxZoom: 17, timeout: 10000});
+map2.locate({setView: true, maxZoom: 17, timeout: 10000});

@@ -1,0 +1,67 @@
+<html>
+<head>
+    <title>FullScreen</title>
+    <!-- CSS Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+
+    <!-- JS Leaflet -->
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin="">
+    </script>
+
+    <script src = "FullScreen.js"></script>
+</head>
+
+<body>
+
+    <style>
+        /* Styling per la mappa */
+        .map-container {
+            height: 90%;
+            width: 100%;
+        }
+    </style>
+
+    <script>
+        //recupera il parametro "parametro" passato nell'URL
+        const whichmaps = new URLSearchParams(window.location.search);
+        const parametro = whichmaps.get('html');
+
+        //modifica dinamicamente l'id del div della mappa in base a quale si sta cercando di caricare
+        if(parametro){
+            // Crea un nuovo elemento div per la mappa
+            const newMapDiv = document.createElement('div');
+            
+            // Assegna l'ID al nuovo div
+            newMapDiv.id = parametro;
+            
+            // Assegna una classe per le dimensioni della mappa
+            newMapDiv.classList.add('map-container');
+        }
+
+        //recupera il parametro "script" passato come argomento nell'URL
+        const scriptName = whichmaps.get('script');
+
+        //funzione per caricare dinamicamente lo script
+        function loadScript(scriptUrl) {
+            const script = document.createElement('script');
+            script.src = scriptUrl;
+            document.head.appendChild(script);
+        }
+
+        //se esiste il parametro "script", carica il file corrispondente
+        if(scriptName)
+            loadScript(scriptName);
+        else
+            window.alert("Nessuno script specificato");
+            //popup di messaggio statico (se script non esiste)
+    </script>
+
+    <button onclick="openFullscreen(3)">BACK</button>
+
+</body>
+</html>

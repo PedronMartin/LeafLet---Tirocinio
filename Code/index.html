@@ -17,6 +17,9 @@
         integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
         crossorigin="">
     </script>
+
+    <!-- inclusione script per gestione finestre fullscreen -->
+    <script src = "FullScreen.js"></script>
 </head>
 
 <!-- corpo pagina -->
@@ -54,7 +57,10 @@
             </style>
 
             <!-- Script JS -->
-             <script src = "CaVignal.js"></script>
+            <script src = "CaVignal.js"></script>
+
+            <!-- pulsante per mappa full screen con script per passaggio di parametro (che mappa visualizzare)-->
+            <button onclick="openFullscreen(1)">Fullscreen</button>
 
             <!-- descrizione mappa e link GitHub impostato per aprirsi in una nuova finestra -->
             <p>Questo codice crea una mappa centrata su Verona, con un marker e un cerchio, 
@@ -77,6 +83,9 @@
 
             <!-- Script JS -->
              <script src = "YourLocation.js"></script>
+
+            <!-- pulsante per mappa full screen -->
+            <button onclick="openFullscreen(2)">Fullscreen</button>
         </section>
 
         <section>
