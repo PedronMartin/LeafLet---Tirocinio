@@ -29,7 +29,7 @@ var popup = L.popup();
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
-        .setContent("Hai premuto la mappa a " + e.latlng.toString())
+        .setContent("Hai premuto la mappa a " + e.latlng)
         .openOn(map);
 }
 

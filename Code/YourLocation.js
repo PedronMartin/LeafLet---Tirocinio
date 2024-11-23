@@ -24,6 +24,12 @@ function onLocationFound(e) {
     //con round della lib Math, arrontondo il valore ad intero
     var radius = Math.round(e.accuracy);
 
+    //condizione per evitare posizioni con accuratezza troppo bassa
+    if(radius > 100) {
+        alert("La precisione rilevata è troppo imprecisa. Prova a migliorare il segnale o riprovare.");
+        return;
+    }
+
     //crea Marker e carica subito il popup
     L.marker(e.latlng).addTo(map2)
         .bindPopup("Grazie per aver condiviso la tua posizione.\nTu sei qui!").openPopup();
@@ -67,5 +73,5 @@ map2.on('locationfound', onLocationFound);
 map2.on('locationerror', onLocationError);
 map2.on('click', onMapClick);
 
-//setting richiesta di geolocalizzazione al dispositivo
-map2.locate({setView: true, maxZoom: 17, timeout: 10000});
+//setting richiesta di geolocalizzazione al dispositivo (con timeout e richiesta di alta precisione)
+map2.locate({setView: true, maxZoom: 17, timeout: 10000, enableenableHighAccuracy: true});
