@@ -8,7 +8,7 @@ Durante il tirocinio infatti, l'attenzione sarà posta inizialmente alla compren
 
 Il monte ore di lavoro è fissato a 150, con aggiornamenti periodici sullo stato del caso studio.
 
-Aggiornamento ore di lavoro: 50/150.
+Aggiornamento ore di lavoro: 60/150.
 Attività coinvolte:
   1) Introduzione teorica a Leaflet (ricerca e studio della tecnologia);
   2) Stesura Report riassunto di quanto appreso;
@@ -16,7 +16,7 @@ Attività coinvolte:
   4) Creazione di un codice d'esempio per provare Leaflet (tramite tutorial ufficiale);
   5) Apprendimento basi di HTML (tramite libro di testo e apprendimento guidato con https://www.freecodecamp.org/);
   6) Sviluppo sito vero e proprio con un mix di quanto visto finora;
-  7) Apprendimento basi di JavaScript;
+  7) Apprendimento basi di JavaScript (sintassi e funzioni di base come Java), in particolare per quanto riguarda alcune funzioni di gestione della finestra HTML e il come interfacciarsi con l'utente;
   8) Creazione Script JS separati da HTML, con richiamo interno e che permetta facili modifiche;
   9) Aggiunta seconda mappa di geolocalizzazione dell'utente, con gestione dell'errore se la posizione non viene concessa e cerchio che rappresenta l'accuratezza del dato raccolto (elemento 'e' della libreria);
-  10) 
+  10) Aggiunti per entrambe le mappe dei pulsanti che reindirizzano l'utente a delle pagine dove la mappa richiesta viene caricata in FullScreen + aggiunto popup di alert se il dato di geolocalizzazione è abbastanza da non mandare in errore ma insufficiente per calcolare una posizione accettabile come precisione;
