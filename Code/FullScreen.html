@@ -28,6 +28,7 @@
 
         <!-- script di recupero dell'id della mappa da caricare -->
         <script>
+
             //recupera i parametri passati nell'URL
             const params = new URLSearchParams(window.location.search);
             const mapName = params.get('html');
@@ -37,16 +38,28 @@
             mapDiv.id = mapName; //usa il nome della mappa richiesta passato come ID
             mapDiv.style.height = '90%';
             document.getElementById('mapContainer').appendChild(mapDiv);
+
+            //funzione che si esegue quando la pagina è completamente caricata (evita problemi di caricamento)
+            window.onload = function() {
+                //rendo visibile/invisibile il pulsante di inserimento coordinate che riguarda solo map3 (GeoCoding)
+                if(mapName == 'map3')
+                    document.getElementById('PulsanteInserisci').style.display = 'block';
+                else
+                    document.getElementById('PulsanteInserisci').style.display = 'none';
+            }
         </script>
 
         
         <!-- inclusione src richiesti -->
-        <script src = "FullScreen.js"></script>
+        <script src = "FullScreen.js"></script> 
         <script src = "CaVignal.js"></script>
         <script src = "YourLocation.js"></script>
+        <script src = "GeoCoding.js"></script> 
 
         <!-- pulsante per uscire dalla vista FullScreen -->
-        <button onclick="openFullscreen(3)">BACK</button>
+        <button onclick="openFullscreen('home')">BACK</button>
 
+        <!-- pulsante invisibile per inserire le coordinate di map3 (GeoCoding) -->
+        <button id="PulsanteInserisci" onclick="askWhere()" style="display: none;">Inserisci</button>
     </body>
 </html>

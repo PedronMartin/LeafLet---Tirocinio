@@ -90,7 +90,7 @@
 
         <section>
             <h3>Geocoding</h3>
-            <p>La seguente mappa permette di cercare un indirizzo e visualizzarlo sulla mappa.</p>
+            <p>La seguente mappa permette di cercare un indirizzo e visualizzarlo sulla mappa. Premi <button onclick = "askWhere()">Inserisci</button> per inserire le coordinate.</p>
 
             <!-- Identificatore e nuova zona per mappa -->
             <div id="map3"></div>
@@ -102,7 +102,10 @@
             </style>
 
             <!-- Script JS -->
-             <script src = "Geocoding.js"></script>
+             <script src = "GeoCoding.js"></script>
+
+            <!-- pulsante per mappa full screen -->
+            <button onclick="openFullscreen(3)">Fullscreen</button>
         </section>
     </main>
    </body>
