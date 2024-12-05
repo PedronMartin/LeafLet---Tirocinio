@@ -25,6 +25,17 @@ function askWhere(){
         return;
     }
 
+    //controllo che i valori inseriti abbiamo un senso
+    if(latitudine < -90 || latitudine > 90){
+        alert("Latitudine non valida! Deve essere compresa tra -90 e 90.");
+        return;
+    }
+
+    if(longitudine < -180 || longitudine > 180){
+        alert("Longitudine non valida! Deve essere compresa tra -180 e 180.");
+        return;
+    }
+
     if(marker != null)
         map3.removeLayer(marker);
 
