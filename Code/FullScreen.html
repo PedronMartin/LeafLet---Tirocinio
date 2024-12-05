@@ -12,6 +12,10 @@
             integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
             crossorigin="">
         </script>
+
+        <!-- inclusione librerie per Rounting Leaflet (map4). Primo è CSS secondo JS  -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
+        <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
     </head>
 
     <body>
@@ -31,7 +35,7 @@
 
             //recupera i parametri passati nell'URL
             const params = new URLSearchParams(window.location.search);
-            const mapName = params.get('html');
+            const mapName = params.get('id');
 
             //crea dinamicamente il div per la mappa con l'ID corretto
             const mapDiv = document.createElement('div');
@@ -46,6 +50,12 @@
                     document.getElementById('PulsanteInserisci').style.display = 'block';
                 else
                     document.getElementById('PulsanteInserisci').style.display = 'none';
+
+                //rendo visibile/invisibile i pulsanti di inserimento punto di partenza e arrivo che riguardano solo map4 (Routing)
+                if(mapName == 'map4')
+                    document.getElementById('PulsanteRouting').style.display = 'block';
+                else
+                    document.getElementById('PulsanteRouting').style.display = 'none';
             }
         </script>
 
@@ -54,12 +64,17 @@
         <script src = "FullScreen.js"></script> 
         <script src = "CaVignal.js"></script>
         <script src = "YourLocation.js"></script>
-        <script src = "GeoCoding.js"></script> 
+        <script src = "GeoCoding.js"></script>
+        <script src = "Routing.js"></script>
 
         <!-- pulsante per uscire dalla vista FullScreen -->
         <button onclick="openFullscreen('home')">BACK</button>
 
         <!-- pulsante invisibile per inserire le coordinate di map3 (GeoCoding) -->
         <button id="PulsanteInserisci" onclick="askWhere()" style="display: none;">Inserisci</button>
+
+        <!-- pulsanti invisibili per inserire punto di partenza e arrivo calcolo percorso (Routing) -->
+        <button id="PulsanteRouting" onclick="askRoute()" style="display: none;">Inserisci</button>
+
     </body>
 </html>

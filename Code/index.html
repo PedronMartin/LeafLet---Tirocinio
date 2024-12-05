@@ -20,6 +20,10 @@
 
     <!-- inclusione script per gestione finestre fullscreen -->
     <script src = "FullScreen.js"></script>
+
+    <!-- inclusione librerie per Rounting Leaflet (map4). Primo è CSS secondo JS  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
 </head>
 
 <!-- corpo pagina -->
@@ -90,7 +94,8 @@
 
         <section>
             <h3>Geocoding</h3>
-            <p>La seguente mappa permette di cercare un indirizzo e visualizzarlo sulla mappa. Premi <button onclick = "askWhere()">Inserisci</button> per inserire le coordinate.</p>
+            <p>La seguente mappa permette di cercare un indirizzo e visualizzarlo sulla mappa.
+                Premi <button onclick = "askWhere()">Inserisci</button> per inserire le coordinate.</p>
 
             <!-- Identificatore e nuova zona per mappa -->
             <div id="map3"></div>
@@ -106,6 +111,31 @@
 
             <!-- pulsante per mappa full screen -->
             <button onclick="openFullscreen(3)">Fullscreen</button>
+        </section>
+
+        <section>
+            <h3>Routing</h3>
+            <p>La seguente mappa permette di calcolare il percorso tra due punti.
+                Premi <button onclick = "askRoute()">Inserisci</button> ogni volta che vuoi inserire un riferimento di partenza o arrivo.</p>
+
+            <!-- Identificatore e nuova zona per mappa -->
+            <div id="map4"></div>
+
+            <!-- CSS -->
+            <style>
+               #map4 { height: 350px;
+                      width: 90%; }
+            </style>
+
+            <!-- Script JS -->
+             <script src = "Routing.js"></script>
+
+            <!-- pulsante per mappa full screen -->
+            <button onclick="openFullscreen(4)">Fullscreen</button>
+            <p>In particolare, cliccando sulla strada del percorso generato, verranno aggiunti nuovi popup 
+                che puoi prendere e spostare a piacimento per la mappa,
+                 per implementare destinazioni intermedie e generare così percorsi più complessi.</p>
+            <p>Nota Bene: è possibile che non si veda bene ogni passo del percorso nel riquadro a destra, è consigliato aprire il FullScreen almeno per questa funzione.</p>
         </section>
     </main>
    </body>
