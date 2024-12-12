@@ -14,6 +14,9 @@ function openFullscreen(which){
         case 4: window.location.href = "FullScreen.html?id=map4";
                 break;
 
+        case 5: window.location.href = "FullScreen.html?id=map5";
+                break;
+
         case 'home': window.location.href = "index.html";
                 break;
 
