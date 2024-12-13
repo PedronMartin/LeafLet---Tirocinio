@@ -19,7 +19,7 @@
     </script>
 
     <!-- inclusione script per gestione finestre fullscreen -->
-    <script src = "FullScreen.js"></script>
+    <script src = "../JS/FullScreen.js"></script>
 
     <!-- inclusione librerie per Rounting Leaflet (map4). Primo è CSS secondo JS  -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
@@ -66,7 +66,7 @@
             </style>
 
             <!-- Script JS -->
-            <script src = "CaVignal.js"></script>
+            <script src = "../JS/CaVignal.js"></script>
 
             <!-- pulsante per mappa full screen con script per passaggio di parametro (che mappa visualizzare)-->
             <button onclick="openFullscreen(1)">Fullscreen</button>
@@ -93,7 +93,7 @@
             </style>
 
             <!-- Script JS -->
-             <script src = "YourLocation.js"></script>
+             <script src = "../JS/YourLocation.js"></script>
 
             <!-- pulsante per mappa full screen -->
             <button onclick="openFullscreen(2)">Fullscreen</button>
@@ -114,7 +114,7 @@
             </style>
 
             <!-- Script JS -->
-             <script src = "GeoCoding.js"></script>
+             <script src = "../JS/GeoCoding.js"></script>
 
             <!-- pulsante per mappa full screen -->
             <button onclick="openFullscreen(3)">Fullscreen</button>
@@ -136,7 +136,7 @@
             </style>
 
             <!-- Script JS -->
-             <script src = "Routing.js"></script>
+             <script src = "../JS/Routing.js"></script>
 
             <!-- pulsante per mappa full screen -->
             <button onclick="openFullscreen(4)">Fullscreen</button>
@@ -162,11 +162,32 @@
             </style>
 
             <!-- Script JS -->
-             <script src = "Cluster.js"></script>
+             <script src = "../JS/Cluster.js"></script>
 
             <!-- pulsante per mappa full screen -->
             <button onclick="openFullscreen(5)">Fullscreen</button>
         </section>
+
+        <section>
+            <h3>Applicazione di Routing ferroviario</h3>
+            <p>La seguente mappa permette di calcolare il percorso tra due stazioni ferroviarie</p>
+            <p>(probabilmente sarà da chiedere stazione di partenza, arrivo, e orario di partenza o arrivo richiesto come input)</p>
+
+            <!-- Identificatore e nuova zona per mappa -->
+            <div id="map6"></div>
+
+            <!-- CSS -->
+            <style>
+               #map6 { height: 500px;
+                      width: 90%; }
+            </style>
+
+            <!-- Script JS -->
+
+            <!-- pulsante per mappa full screen -->
+             
+        </section>
+        
     </main>
    </body>
 </html>

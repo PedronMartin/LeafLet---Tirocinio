@@ -16,6 +16,11 @@
         <!-- inclusione librerie per Rounting Leaflet (map4). Primo è CSS secondo JS  -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
         <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+        <!-- inclusione librerie per Cluster di marker (map5). Primi due sono CSS secondo JS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+        <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
     </head>
 
     <body>
@@ -39,9 +44,43 @@
 
             //crea dinamicamente il div per la mappa con l'ID corretto
             const mapDiv = document.createElement('div');
-            mapDiv.id = mapName; //usa il nome della mappa richiesta passato come ID
+            mapDiv.id = mapName;
             mapDiv.style.height = '90%';
             document.getElementById('mapContainer').appendChild(mapDiv);
+
+            //funzione per caricare uno script esterno (in base a mappa passata come argomento)
+            function loadScript(url, callback) {
+                var script = document.createElement('script');  //crea un nuovo elemento <script>
+                script.type = 'text/javascript';                //imposta il tipo di script
+                script.src = url;                               //URL rappresenta il file da caricare
+                document.head.appendChild(script);              //script aggiunto al documento
+            }
+
+            //carica lo script corretto in base all'ID della mappa
+            var ScriptName;
+            switch(mapName) {
+                case 'map':
+                    ScriptName = 'CaVignal.js';
+                    break;
+                case 'map2':
+                    ScriptName = 'YourLocation.js';
+                    break;
+                case 'map3':
+                    ScriptName = 'GeoCoding.js';
+                    break;
+                case 'map4':
+                    ScriptName = 'Routing.js';
+                    break;
+                case 'map5':
+                    ScriptName = 'Cluster.js';
+                    break;
+            }
+
+            ScriptName = "../JS/" + ScriptName;
+
+            //richiamo alla funzione di caricamento
+            loadScript(ScriptName, function() {
+            });
 
             //funzione che si esegue quando la pagina è completamente caricata (evita problemi di caricamento)
             window.onload = function() {
@@ -59,14 +98,8 @@
             }
         </script>
 
-        
-        <!-- inclusione src richiesti -->
-        <script src = "FullScreen.js"></script> 
-        <script src = "CaVignal.js"></script>
-        <script src = "YourLocation.js"></script>
-        <script src = "GeoCoding.js"></script>
-        <script src = "Routing.js"></script>
-        <script src = "Cluster.js"></script>
+        <!-- script per la vista FullScreen (per il pulsante BACK)-->
+        <script src = "../JS/FullScreen.js"></script> 
 
         <!-- pulsante per uscire dalla vista FullScreen -->
         <button onclick="openFullscreen('home')">BACK</button>

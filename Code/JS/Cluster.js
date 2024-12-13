@@ -14,7 +14,7 @@ var randomLong = Math.random() * (maxLong - minLong) + minLong;
 var markers = L.markerClusterGroup();
 
 //aggiungo un certo numero di marker interni al cluster, delimitati da +-1km dal centro del marker primario
-for (var i = 0; i < 4; i++) {
+for (var i = 0; i < 5; i++) {
     var marker = L.marker(randomPosition());
     markers.addLayer(marker);
 }
