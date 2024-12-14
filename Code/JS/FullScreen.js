@@ -17,7 +17,7 @@ function openFullscreen(which){
         case 5: window.location.href = "../HTML/FullScreen.html?id=map5";
                 break;
 
-        case 'home': window.location.href = "../HTML/index.html";
+        case 'home': window.location.href = "../index.html";
                 break;
 
         //messaggio di errore per un valore non valido
