@@ -19,7 +19,7 @@
     </script>
 
     <!-- inclusione script per gestione finestre fullscreen -->
-    <script src = "../JS/FullScreen.js"></script>
+    <script src = "JS/FullScreen.js"></script>
 
     <!-- inclusione librerie per Rounting Leaflet (map4). Primo è CSS secondo JS  -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css"/>
@@ -171,7 +171,9 @@
         <section>
             <h3>Applicazione di Routing ferroviario</h3>
             <p>La seguente mappa permette di calcolare il percorso tra due stazioni ferroviarie</p>
-            <p>(probabilmente sarà da chiedere stazione di partenza, arrivo, e orario di partenza o arrivo richiesto come input)</p>
+            <p>NOTE:(probabilmente sarà da chiedere stazione di partenza, arrivo, e orario di partenza o arrivo richiesto come input)
+                   Inoltre sarebbe bello poter mettere all'utente la propria posizione reale (e quindi mettere a piedi fino alla stazione)
+            </p>
 
             <!-- Identificatore e nuova zona per mappa -->
             <div id="map6"></div>
@@ -183,6 +185,13 @@
             </style>
 
             <!-- Script JS -->
+            <script type="module" src = "JS/Train.js"></script>
+
+            <label for="StazioniList">Scegli la stazione di partenza:</label>
+            <select id="StazioniList">
+                <option value=""></option>
+            </select>
+
 
             <!-- pulsante per mappa full screen -->
              

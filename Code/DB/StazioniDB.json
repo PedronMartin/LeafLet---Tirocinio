@@ -1,0 +1,94 @@
+{
+    "stazioni": [
+      {
+        "id": 1,
+        "nome": "Trento",
+        "coordinate": [46.07242770533295, 11.119415716482608]
+      },
+      {
+        "id": 2,
+        "nome": "Rovereto",
+        "coordinate": [45.89131970702547, 11.034080469883865]
+      },
+      {
+        "id": 3,
+        "nome": "Ala",
+        "coordinate": [45.75921224984683, 10.996474139192028]
+      },
+      {
+        "id": 4,
+        "nome": "Domegliara",
+        "coordinate": [45.52250619300174, 10.820713110343668]
+      },
+      {
+        "id": 5,
+        "nome": "Verona Porta Nuova",
+        "coordinate": [45.42930095695064, 10.982438965629317]
+      },
+      {
+        "id": 6,
+        "nome": "MezzoCorona",
+        "coordinate": [46.20773353845297, 11.128530329196124]
+      },
+      {
+        "id": 7,
+        "nome": "Ora",
+        "coordinate": [46.3610856154407, 11.296820670184307]
+      },
+      {
+        "id": 8,
+        "nome": "Bolzano",
+        "coordinate": [46.496866784368635, 11.3582513254641]
+      },
+      {
+        "id": 9,
+        "nome": "Isola della Scala",
+        "coordinate": [45.269546528376644, 11.01314036800118]
+      },
+      {
+        "id": 10,
+        "nome": "Nogara",
+        "coordinate": [45.17979440921855, 11.070468969845487]
+      },
+      {
+        "id": 11,
+        "nome": "Ostiglia",
+        "coordinate": [45.07920859002054, 11.13936286614187]
+      },
+      {
+        "id": 12,
+        "nome": "Poggio Rusco",
+        "coordinate": [44.98208571331926, 11.124495625656952]
+      },
+      {
+        "id": 13,
+        "nome": "Mirandola",
+        "coordinate": [44.891664974900266, 11.11161016613183]
+      },
+      {
+        "id": 14,
+        "nome": "San Felice sul Panaro",
+        "coordinate": [44.834679112159755, 11.14043313914233]
+      },
+      {
+        "id": 15,
+        "nome": "Crevalcore",
+        "coordinate": [44.71937929999013, 11.15248652194475]
+      },
+      {
+        "id": 16,
+        "nome": "San Giovanni in Persiceto",
+        "coordinate": [44.64347216098692, 11.189191894954144]
+      },
+      {
+        "id": 17,
+        "nome": "Osteria Nuova",
+        "coordinate": [44.58510710927683, 11.23515313940385]
+      },
+      {
+        "id": 18,
+        "nome": "Bologna Centrale",
+        "coordinate": [44.506108392080115, 11.34332937350767]
+      }
+    ]
+  }
