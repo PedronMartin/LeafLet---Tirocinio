@@ -8,7 +8,7 @@ Durante il tirocinio infatti, l'attenzione sarà posta inizialmente alla compren
 
 Il monte ore di lavoro è fissato a 150, con aggiornamenti periodici sullo stato del caso studio.
 
-Aggiornamento ore di lavoro: 95/150.
+Aggiornamento ore di lavoro: 100 - 110 su 150.
 Attività coinvolte:
   1) Introduzione teorica a Leaflet (ricerca e studio della tecnologia);
   2) Stesura Report riassunto di quanto appreso;
@@ -24,7 +24,11 @@ Attività coinvolte:
   12) Aggiunta mappa di Routing che genera percorso richiesto dall'utente. FullScreen integrato anche per questa mappa;
   13) Aggiunta mappa in grado di creare (random) un cluster di marker all'interno di una zona delimitata (FullScreen integrato);
   14) Rilevato e corretto errore nella schermata FullScreen (dava che non caricava gli altri file delle mappe non richieste perchè erano tutte integrate nel file). Soluzione: caricamento dello script in modo dinamico tramite script interno già presente in FullScreen.html;
-  15) Creata <div> e descrizione per nuova mappa (che probabilmente porterà molto del tempo restante). Si tratta di una mappa che calcola la combinazione di possibili treni per un percorso indicato dall'utente. Per prima cosa sono andato a definire due mini-database in JSON, con qualche prototipo iniziale di dato: un file rappresenta le tratte dei treni, mentre l'altro le fermate esistenti nel sistema ferroviario (vi è quindi un incapsulamento per id tra uno e l'altro). La nuova mappa sarebbe quindi un misto di alcune delle precedenti, ma con lo scopo di ampliare la complessità dell'utilizzo di Leaflet, piuttosto che andare a lavorare sul estendere tale tecnologia nella sua implementazione già esistente.
-  16) Visto il crescente numero di file, ho riordinato tutti i sorgenti in cartelle sulla base del linguaggio, modificando opportunamente i riferimenti;
-17) Potenziato DB stazioni + craeta mappa + richiesta utente stazione di partenza tramite lista riempita dal DB;
+  15) Aggiunta mappa di ricerca semplice, tramite un DB incorporato della libreria, che permette di trovare un luogo da una
+  barra di ricerca indicandone alcuni informazioni;
+  16) Aggiunta mappa per la gestione di aree a diversa intensità (FullScreen integrato);
+  17) Aggiunta mappa per la sovvrapposizione di immagini e video a determinate aree geografiche (FullScrenn integrato);
+  18) Creata <div> e descrizione per nuova mappa (che probabilmente porterà molto del tempo restante). Si tratta di una mappa che calcola la combinazione di possibili treni per un percorso indicato dall'utente. Per prima cosa sono andato a definire due mini-database in JSON, con qualche prototipo iniziale di dato: un file rappresenta le tratte dei treni, mentre l'altro le fermate esistenti nel sistema ferroviario (vi è quindi un incapsulamento per id tra uno e l'altro). La nuova mappa sarebbe quindi un misto di alcune delle precedenti, ma con lo scopo di ampliare la complessità dell'utilizzo di Leaflet, piuttosto che andare a lavorare sul estendere tale tecnologia nella sua implementazione già esistente.
+  19) Visto il crescente numero di file, ho riordinato tutti i sorgenti in cartelle sulla base del linguaggio, modificando opportunamente i riferimenti;
+  20) Potenziato DB stazioni + craeta mappa + richiesta utente stazione di partenza tramite lista riempita dal DB;
 
