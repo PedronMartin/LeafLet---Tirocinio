@@ -1,11 +1,11 @@
 //creazione mappa
-var map6 = L.map('map6').setView([45.40342369717214, 10.998998624064418], 16);
+var mapTrain = L.map('mapTrain').setView([45.40342369717214, 10.998998624064418], 16);
 
 //carica OpenStreetMap e proprietà
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map6);
+}).addTo(mapTrain);
 
 //importo script esterno per gestione del JSON
 import * as StazioniModel from './StazioniModel.js';
@@ -20,21 +20,27 @@ try {
         //crea un'opzione per ogni stazione
         const option = document.createElement('option');
         option.value = stazione.id;
-        option.textContent = stazione.nome;
+        option.textContent = stazione.id;
         lista.appendChild(option); //aggiunge l'opzione alla lista
     });
 } catch (error) {
     console.error('Errore nel popolare il dropdown:', error);
 }
 
+//marker di partenza
+var markerPart = null;
+
 //listener per quando l'utente seleziona il valore
 lista.addEventListener('change', function() {
+    //elimino, se esiste, selezioni precedenti
+    if(markerPart != null)
+        mapTrain.removeLayer(markerPart);
     const selectedId = lista.value;
     const selectedStazione = stazioni.find(stazione => stazione.id == selectedId);
     if (selectedStazione) {
-        L.marker(selectedStazione.coordinate).addTo(map6)
-            .bindPopup(`Stazione di ${selectedStazione.nome}`)
+        markerPart = L.marker(selectedStazione.coordinate).addTo(mapTrain)
+            .bindPopup(`Stazione di ${selectedStazione.id}`)
             .openPopup();
-        map6.setView(selectedStazione.coordinate, 16);
+            mapTrain.setView(selectedStazione.coordinate, 16);
     }
 });

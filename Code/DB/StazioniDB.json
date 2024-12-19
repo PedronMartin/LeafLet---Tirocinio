@@ -1,94 +1,156 @@
 {
     "stazioni": [
       {
-        "id": 1,
-        "nome": "Trento",
+        "id": "Trento",
         "coordinate": [46.07242770533295, 11.119415716482608]
       },
       {
-        "id": 2,
-        "nome": "Rovereto",
+        "id": "Rovereto",
         "coordinate": [45.89131970702547, 11.034080469883865]
       },
       {
-        "id": 3,
-        "nome": "Ala",
+        "id": "Ala",
         "coordinate": [45.75921224984683, 10.996474139192028]
       },
       {
-        "id": 4,
-        "nome": "Domegliara",
+        "id": "Domegliara",
         "coordinate": [45.52250619300174, 10.820713110343668]
       },
       {
-        "id": 5,
-        "nome": "Verona Porta Nuova",
+        "id": "Verona Porta Nuova",
         "coordinate": [45.42930095695064, 10.982438965629317]
       },
       {
-        "id": 6,
-        "nome": "MezzoCorona",
+        "id": "MezzoCorona",
         "coordinate": [46.20773353845297, 11.128530329196124]
       },
       {
-        "id": 7,
-        "nome": "Ora",
+        "id": "Ora",
         "coordinate": [46.3610856154407, 11.296820670184307]
       },
       {
-        "id": 8,
-        "nome": "Bolzano",
+        "id": "Bolzano",
         "coordinate": [46.496866784368635, 11.3582513254641]
       },
       {
-        "id": 9,
-        "nome": "Isola della Scala",
+        "id": "Isola della Scala",
         "coordinate": [45.269546528376644, 11.01314036800118]
       },
       {
-        "id": 10,
-        "nome": "Nogara",
+        "id": "Nogara",
         "coordinate": [45.17979440921855, 11.070468969845487]
       },
       {
-        "id": 11,
-        "nome": "Ostiglia",
+        "id": "Ostiglia",
         "coordinate": [45.07920859002054, 11.13936286614187]
       },
       {
-        "id": 12,
-        "nome": "Poggio Rusco",
+        "id": "Poggio Rusco",
         "coordinate": [44.98208571331926, 11.124495625656952]
       },
       {
-        "id": 13,
-        "nome": "Mirandola",
+        "id": "Mirandola",
         "coordinate": [44.891664974900266, 11.11161016613183]
       },
       {
-        "id": 14,
-        "nome": "San Felice sul Panaro",
+        "id": "San Felice sul Panaro",
         "coordinate": [44.834679112159755, 11.14043313914233]
       },
       {
-        "id": 15,
-        "nome": "Crevalcore",
+        "id": "Crevalcore",
         "coordinate": [44.71937929999013, 11.15248652194475]
       },
       {
-        "id": 16,
-        "nome": "San Giovanni in Persiceto",
+        "id": "San Giovanni in Persiceto",
         "coordinate": [44.64347216098692, 11.189191894954144]
       },
       {
-        "id": 17,
-        "nome": "Osteria Nuova",
+        "id": "Osteria Nuova",
         "coordinate": [44.58510710927683, 11.23515313940385]
       },
       {
-        "id": 18,
-        "nome": "Bologna Centrale",
+        "id": "Bologna Centrale",
         "coordinate": [44.506108392080115, 11.34332937350767]
-      }
-    ]
-  }
+      },
+      {
+        "id": "Peschiera del Garda",
+        "coordinate": [45.438917139657434, 10.702473827530536]
+      },
+      {
+        "id": "Desenzano del Garda-Sirmione",
+        "coordinate": [45.462882944282455, 10.536419996847147]
+      },
+      {
+        "id": "Brescia",
+        "coordinate": [45.53251025198761, 10.212819996850934]
+      },
+      {
+        "id": "Rovato",
+        "coordinate": [45.55277891365144, 10.00102701857435]
+      },
+      {
+        "id": "Treviglio",
+        "coordinate": [45.51560888551072, 9.588617021788336]
+      },
+      {
+        "id": "Milano Lambrate",
+        "coordinate": [45.48931575486156, 9.23676740049761]
+      },
+      {
+        "id": "Milano Centrale",
+        "coordinate": [45.48729492567557, 9.204779081506173]
+      },
+      {
+        "id": "Modena",
+         "coordinate": [44.65447724422639, 10.930615766119175]
+      },
+      {
+        "id": "Reggio Emilia",
+        "coordinate": [44.699500058223414, 10.643302561155762]
+      },
+      {
+        "id": "Reggio Emilia AV Mediopadana",
+        "coordinate": [44.72566697528689, 10.653258920576487]
+      },
+      {
+        "id": "Parma",
+        "coordinate": [44.81048133934339, 10.32855276003055]
+      },
+      {
+        "id": "Fidenza",
+        "coordinate": [44.867869841568464, 10.06343891215755]
+      },
+      {
+        "id": "Piacenza",
+        "coordinate": [45.05211158231091, 9.70615466983858]
+      },
+      {
+        "id": "Lodi",
+        "coordinate": [45.3091810151745, 9.497590696838875]
+      },
+      {
+        "id": "Milano Rogoredo",
+        "coordinate": [45.43391369043331, 9.238530675956023]
+      },
+      {
+        "id": "San Bonifacio",
+        "coordinate": [45.40265129810311, 11.274250654515086]
+      },
+      {
+        "id": "Vicenza",
+        "coordinate": [45.541506373590394, 11.54082948335818]
+      },
+      {
+        "id": "Padova",
+       "coordinate": [45.41749285934601, 11.880454096844705]
+      },
+      {
+        "id": "Venezia Mestre",
+        "coordinate": [45.48254330854024, 12.23178418059259]
+      },
+      {
+        "id": "Venezia Santa Lucia",
+        "coordinate": [45.44127244399095, 12.321023044996931]
+      }  
+  ]
+}

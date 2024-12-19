@@ -29,6 +29,13 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
+
+    <!-- inclusione librerie per GeoLocalizzazione assisita (map6). Primo è CSS secondo JS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/k4r573n/leaflet-control-osm-geocoder/Control.OSMGeocoder.css" />
+    <script src="https://cdn.jsdelivr.net/gh/k4r573n/leaflet-control-osm-geocoder/Control.OSMGeocoder.js"></script>
+
+    <!-- inclusione libreria per copertura di densità (map7). Solo JS -->
+    <script src="https://cdn.jsdelivr.net/gh/Leaflet/Leaflet.heat/dist/leaflet-heat.js"></script>
 </head>
 
 <!-- corpo pagina -->
@@ -50,10 +57,13 @@
                  come dice chiaramente il suo creatore nelle interviste legate a questa tecnologia. Leaflet abbatte 
                  quindi la complessità e la rigidità del mapping moderno, consentendo agli sviluppatori di creare mappe 
                  dinamiche che supportano interazioni come zoom, spostamento, aggiunta di marker e popup, e visualizzazione di layer 
-                 di dati, con estrema semplicità.</p>
+                 di dati, con estrema semplicità. Leaflet è inoltre compatibile con la maggior parte dei browser moderni, inclusi Chrome, Firefox, Safari, Opera e Internet Explorer 7-11. </p>
+            
+             <p>Tutta l'esplorazione della libreria ha come fonti il sito ufficiale di <a href = "https://leafletjs.com/" target = "_blank">Leaflet</a>
+                 e la documentazione meno 'ufficiosa' reperibile su <a href = "https://github.com/Leaflet/Leafdoc/tree/gh-pages" target = "_blank">GitHub</a>.</p>
 
             <!-- esempio dimostrativo -->
-            <h3>Esempio</h3>
+            <h3>Prima mappa - statica</h3>
             <p>Con sole 45 righe di codice JavaScript è infatti possibile creare un semplicissimo esempio:</p>
 
             <!-- Codice JS per creazione mappa di esempio tramite Leaflet -->
@@ -74,128 +84,231 @@
             <!-- descrizione mappa e link GitHub impostato per aprirsi in una nuova finestra -->
             <p>Questo codice crea una mappa centrata su Verona, con un marker e un cerchio, 
                 e con la possibilità di cliccare sulla mappa per ottenere le coordinate del punto cliccato.</p>
-            <p>Per maggiori dettagli implementativi, si rimanda alla <a target = "_blank"
+            <p>Per maggiori dettagli implementativi di tutto ciò che seguirà, si rimanda alla <a target = "_blank"
                 href = "https://github.com/PedronMartin/LeafLet---Tirocinio/tree/main" >
                 Repository Github con i codici sorgente</a></p>
         </section>
 
-        <section>
-            <h3>Geolocalizzazione</h3>
-            <p>La seguente mappa invece imposta un popup all'attuale posizione dell'utilizzatore.</p>
+        <h2>Funzionalità Principali</h2>
 
-            <!-- Identificatore e nuova zona per mappa -->
-            <div id="map2"></div>
+            <section>
+                <h3>Geolocalizzazione</h3>
+                <p>La seguente mappa invece imposta un popup all'attuale posizione dell'utilizzatore.</p>
+                <p>Attraverso la concessione dell'utente, delle funzioni della libreria permettono di individuare
+                    e visualizzare la posizione attuale dell'utente sulla mappa, con la possibilità di indicare anche l'accuratezza
+                    del dato raccolto.</p> 
 
-            <!-- CSS -->
-            <style>
-               #map2 { height: 250px;
-                      width: 90%; }
-            </style>
+                <!-- Identificatore e nuova zona per mappa -->
+                <div id="map2"></div>
 
-            <!-- Script JS -->
-             <script src = "JS/YourLocation.js"></script>
+                <!-- CSS -->
+                <style>
+                #map2 { height: 250px;
+                        width: 90%; }
+                </style>
 
-            <!-- pulsante per mappa full screen -->
-            <button onclick="openFullscreen(2)">Fullscreen</button>
-        </section>
+                <!-- Script JS -->
+                <script src = "JS/YourLocation.js"></script>
 
-        <section>
-            <h3>Geocoding</h3>
-            <p>La seguente mappa permette di cercare un indirizzo e visualizzarlo sulla mappa.
-                Premi <button onclick = "askWhere()">Inserisci</button> per inserire le coordinate.</p>
+                <!-- pulsante per mappa full screen -->
+                <button onclick="openFullscreen(2)">Fullscreen</button>
+            </section>
 
-            <!-- Identificatore e nuova zona per mappa -->
-            <div id="map3"></div>
+            <section>
+                <h3>Geocoding</h3>
+                <p>La seguente mappa permette di cercare un indirizzo e visualizzarlo sulla mappa.
+                    Premi <button onclick = "askWhere()">Inserisci</button> per inserire le coordinate.</p>
+                    <p>Vengono quindi richieste all'utente Latitudine e Longitudine della posizione che si vuole visualizzare.
+                        Questo permette maggiore precisione rispetto alla geolocalizzazione, ma è meno intuitivo per l'utente.
+                        Dal punto di vista didattico, è interessante vedere come la libreria lavori e utilizzi i dati.</p>
 
-            <!-- CSS -->
-            <style>
-               #map3 { height: 250px;
-                      width: 90%; }
-            </style>
+                <!-- Identificatore e nuova zona per mappa -->
+                <div id="map3"></div>
 
-            <!-- Script JS -->
-             <script src = "JS/GeoCoding.js"></script>
+                <!-- CSS -->
+                <style>
+                #map3 { height: 250px;
+                        width: 90%; }
+                </style>
 
-            <!-- pulsante per mappa full screen -->
-            <button onclick="openFullscreen(3)">Fullscreen</button>
-        </section>
+                <!-- Script JS -->
+                <script src = "JS/GeoCoding.js"></script>
 
-        <section>
-            <h3>Routing</h3>
-            <p>La seguente mappa permette di calcolare il percorso tra due punti.
-                Premi <button onclick = "askRoute()">Inserisci</button> ogni volta che vuoi inserire un riferimento di partenza o 
-                arrivo.</p>
+                <!-- pulsante per mappa full screen -->
+                <button onclick="openFullscreen(3)">Fullscreen</button>
+            </section>
 
-            <!-- Identificatore e nuova zona per mappa -->
-            <div id="map4"></div>
+            <section>
+                <h3>Routing</h3>
+                <p>La seguente mappa permette di calcolare il percorso tra due punti.
+                    Premi <button onclick = "askRoute()">Inserisci</button> ogni volta che vuoi inserire un riferimento di partenza o 
+                    arrivo.</p>
+                    <p>La seguente funzione è possibile tramite il plug-in 'Routing', incorporata come sotto-libreria di Leaflet.</p>
 
-            <!-- CSS -->
-            <style>
-               #map4 { height: 350px;
-                      width: 90%; }
-            </style>
+                <!-- Identificatore e nuova zona per mappa -->
+                <div id="map4"></div>
 
-            <!-- Script JS -->
-             <script src = "JS/Routing.js"></script>
+                <!-- CSS -->
+                <style>
+                #map4 { height: 350px;
+                        width: 90%; }
+                </style>
 
-            <!-- pulsante per mappa full screen -->
-            <button onclick="openFullscreen(4)">Fullscreen</button>
-            <p>In particolare, cliccando sulla strada del percorso generato, verranno aggiunti nuovi popup 
-                che puoi prendere e spostare a piacimento per la mappa,
-                 per implementare destinazioni intermedie e generare così percorsi più complessi.</p>
-            <p>Nota Bene: è possibile che non si veda bene ogni passo del percorso nel riquadro a destra,
-                 è consigliato aprire il FullScreen almeno per questa funzione.</p>
-        </section>
+                <!-- Script JS -->
+                <script src = "JS/Routing.js"></script>
 
-        <section>
-            <h3>Cluster</h3>
-            <p>La seguente mappa permette di visualizzare un cluster di marker, ovvero un insieme di marker raggruppati
-                in un unico marker che, cliccandoci sopra, mostra i marker singoli.</p>
+                <!-- pulsante per mappa full screen -->
+                <button onclick="openFullscreen(4)">Fullscreen</button>
+                <p>In particolare, cliccando sulla strada del percorso generato, verranno aggiunti nuovi popup 
+                    che puoi prendere e spostare a piacimento per la mappa,
+                    per implementare destinazioni intermedie e generare così percorsi più complessi.</p>
+                <p>Nota Bene: è possibile che non si veda bene ogni passo del percorso nel riquadro a destra,
+                    è consigliato aprire il FullScreen almeno per questa funzione.</p>
+            </section>
 
-            <!-- Identificatore e nuova zona per mappa -->
-            <div id="map5"></div>
+            <section>
+                <h3>Cluster</h3>
+                <p>La seguente mappa permette di visualizzare un cluster di marker, ovvero un insieme di marker raggruppati
+                    in un unico marker che, cliccandoci sopra, mostra i marker singoli.</p>
 
-            <!-- CSS -->
-            <style>
-               #map5 { height: 250px;
-                      width: 90%; }
-            </style>
+                <!-- Identificatore e nuova zona per mappa -->
+                <div id="map5"></div>
 
-            <!-- Script JS -->
-             <script src = "JS/Cluster.js"></script>
+                <!-- CSS -->
+                <style>
+                #map5 { height: 250px;
+                        width: 90%; }
+                </style>
 
-            <!-- pulsante per mappa full screen -->
-            <button onclick="openFullscreen(5)">Fullscreen</button>
-        </section>
+                <!-- Script JS -->
+                <script src = "JS/Cluster.js"></script>
 
-        <section>
-            <h3>Applicazione di Routing ferroviario</h3>
-            <p>La seguente mappa permette di calcolare il percorso tra due stazioni ferroviarie</p>
-            <p>NOTE:(probabilmente sarà da chiedere stazione di partenza, arrivo, e orario di partenza o arrivo richiesto come input)
-                   Inoltre sarebbe bello poter mettere all'utente la propria posizione reale (e quindi mettere a piedi fino alla stazione)
-            </p>
+                <!-- pulsante per mappa full screen -->
+                <button onclick="openFullscreen(5)">Fullscreen</button>
+            </section>
 
-            <!-- Identificatore e nuova zona per mappa -->
-            <div id="map6"></div>
+            <section>
+                <h3>Geolocalizzazione intuitiva</h3>
+                <p>La seguente mappa permette di visualizzare un luogo sulla mappa in base al nome del luogo inserito dall'utente</p>
+                <p>Questa funzione è possibile grazie al plug-in 'OSM Geocoder', che permette di cercare un luogo e visualizzarlo sulla mappa.
+                    La mappa chiede quindi all’utente di ricercare semplicemente un'ubicazione, individuata grazie alle librerie di Nominatim.
+                     Il risultato è una bounding box, ovvero una zoomata (più o meno precisa) sulla zona ricercata.</p>
 
-            <!-- CSS -->
-            <style>
-               #map6 { height: 500px;
-                      width: 90%; }
-            </style>
+                <!-- Identificatore e nuova zona per mappa -->
+                <div id="map6"></div>
 
-            <!-- Script JS -->
-            <script type="module" src = "JS/Train.js"></script>
+                <!-- CSS -->
+                <style>
+                #map6 { height: 500px;
+                        width: 90%; }
+                </style>
 
-            <label for="StazioniList">Scegli la stazione di partenza:</label>
-            <select id="StazioniList">
-                <option value=""></option>
-            </select>
+                <!-- Script JS -->
+                <script src = "JS/SimpleSearch.js"></script>
+
+                <!-- pulsante per mappa full screen -->
+                <button onclick="openFullscreen(6)">Fullscreen</button>
+            </section>
+
+        <h2>Funzionalità estetiche o ausiliari</h2>
+
+            <section>
+                <h3>Soglie di densità</h3>
+                <p>La seguente mappa permette di visualizzare il grado di densità di un dato per una determinata zona geografica.</p>
+                <p>Tramite la funzione heatLayer è possibile definire delle zone di varia intensità. Quest'ultima può essere
+                     definita sulla base di dati statici o dinamici, come ad esempio la densità di popolazione o la densità di traffico.
+                      Per questa mappa sono stati creati dei dati fittizi per la densità degli studenti iscritti ai vari dipartimenti
+                       dell'Università di Verona. Questi dati, salvati in un file Json, vengono caricati e utilizzata dalla mappa per creare
+                        le zone di intensità. Questo tipo di impostazione del DB è chiamato GEOJson, ed è uno standard nel settore.</p>
+                </p>
+
+                <!-- Identificatore e nuova zona per mappa -->
+                <div id="map7"></div>
+
+                <!-- CSS -->
+                <style>
+                #map7 { height: 250px;
+                        width: 90%; }
+                </style>
+
+                <!-- Script JS -->
+                <script src = "JS/Densità.js"></script>
+
+                <!-- pulsante per mappa full screen -->
+                <button onclick="openFullscreen(7)">Fullscreen</button>
+            </section>
+
+            <section>
+                <h3>Immagini sovvrapposte</h3>
+                <p>Le seguenti mappe permettono di visualizzare delle caratteristiche aggiuntive in una determinata zona geografica.</p>
+                
+                <h4>ImageOverlay</h4>
+                    <p>Nella seguente mappa vediamo come sia possibile sovvrapporre immagini per descrivere proprietà aggiuntive di un luogo.</p>
+
+                    <!-- Identificatore e nuova zona per mappa -->
+                    <div id="map8"></div>
+
+                    <!-- CSS -->
+                    <style>
+                    #map8 { height: 250px;
+                            width: 90%; }
+                    </style>
+
+                    <!-- Script JS -->
+                    <script src = "JS/ImageOverlay.js"></script>
+
+                    <!-- pulsante per mappa full screen -->
+                    <button onclick="openFullscreen(8)">Fullscreen</button>
+
+                <h4>VideoOverlay</h4>
+                    <p>Nella seguente mappa vediamo come sia possibile sovvrapporre un video (mp4 o webm) per descrivere proprietà aggiuntive di un luogo.</p>
+
+                    <!-- Identificatore e nuova zona per mappa -->
+                    <div id="map9"></div>
+
+                    <!-- CSS -->
+                    <style>
+                        #map9 { height: 250px;
+                                width: 90%; }
+                    </style>    
+                    
+                    <!-- Script JS -->
+                    <script src = "JS/VideoOverlay.js"></script>
+
+                    <!-- pulsante per mappa full screen -->
+                    <button onclick="openFullscreen(9)">Fullscreen</button>
+            </section>
+
+        <h2>Caso studio:</h2>
+        
+            <section>
+                <h3>Applicazione di Routing ferroviario</h3>
+                <p>La seguente mappa permette di calcolare il percorso tra due stazioni ferroviarie</p>
+                <p>NOTE:(probabilmente sarà da chiedere stazione di partenza, arrivo, e orario di partenza o arrivo richiesto come input)
+                    Inoltre sarebbe bello poter mettere all'utente la propria posizione reale (e quindi mettere a piedi fino alla stazione)
+                </p>
+
+                <!-- Identificatore e nuova zona per mappa -->
+                <div id="mapTrain"></div>
+
+                <!-- CSS -->
+                <style>
+                #mapTrain { height: 500px;
+                        width: 90%; }
+                </style>
+
+                <!-- Script JS -->
+                <script type="module" src = "JS/Train.js"></script>
+
+                <label for="StazioniList">Scegli la stazione di partenza:</label>
+                <select id="StazioniList">
+                    <option value=""></option>
+                </select>
 
 
-            <!-- pulsante per mappa full screen -->
-             
-        </section>
+                <!-- pulsante per mappa full screen -->
+                
+            </section>
         
     </main>
    </body>

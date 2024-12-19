@@ -1,0 +1,30 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "proprietà": { "nome": "Dipartimento di Medicina e Chirurgia", "densita": 1500 },
+            "geometria": { "tipo": "Point", "coordinate": [45.402918158594225, 10.996213338331014] }
+        },
+        {
+            "type": "Feature",
+            "proprietà": { "nome": "Dipartimento di Scienze e Ingegneria", "densita": 10000 },
+            "geometria": { "tipo": "Point", "coordinate": [45.403190937250635, 10.999043910306044] }
+        },
+        {
+            "type": "Feature",
+            "proprietà": { "nome": "Dipartimento principale in Veronetta", "densita": 125 },
+            "geometria": { "tipo": "Point", "coordinate": [45.43661399000839, 11.003252193135726] }
+        },
+        {
+            "type": "Feature",
+            "proprietà": { "nome": "Dipartimento di Scienze Giuridiche", "densita": 500 },
+            "geometria": { "tipo": "Point", "coordinate": [45.43455794502318, 10.992360113298679] }
+        },
+        {
+            "type": "Feature",
+            "proprietà": { "nome": "Dipartimento di Scienze Umanistiche", "densita": 5 },
+            "geometria": { "tipo": "Point", "coordinate": [45.43792643648459, 11.00223872864101] }
+        }
+    ]
+}

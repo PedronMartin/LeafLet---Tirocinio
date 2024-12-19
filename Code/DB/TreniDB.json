@@ -1,31 +1,206 @@
 {
-    "treni": [
-      {
-        "id": "AAA",
-        "stazionePart": 1,
-        "stazioneArr": 5,
-        "fermate": [1, 2, 3, 4, 5],
-        "orarioPart": "9.07",
-        "orarioArr": "10.30",
-        "categoria": "REG"
-      },
-      {
-        "id": "AAB",
-        "stazionePart": 1,
-        "stazioneArr": 5,
-        "fermate": [1, 2, 3, 4, 5],
-        "orarioPart": "9.37",
-        "orarioArr": "10.52",
-        "categoria": "RV"
-      },
-      {
-        "id": "AAC",
-        "stazionePart": 1,
-        "stazioneArr": 5,
-        "fermate": [1, 2, 3, 4, 5],
-        "orarioPart": "10.01",
-        "orarioArr": "11.07",
-        "categoria": "FrecciaRossa"
-      }
-    ]
-  }
+  "treni": [
+    {
+      "id": "AAA",
+      "stazionePart": "Trento",
+      "stazioneArr": "Verona Porta Nuova",
+      "fermate": [
+        { "id": "Trento", "orario": "09:07" },
+        { "id": "Rovereto", "orario": "09:20" },
+        { "id": "Ala", "orario": "09:40" },
+        { "id": "Domegliara", "orario": "10:00" },
+        { "id": "Verona Porta Nuova", "orario": "10:30" }
+      ],
+      "categoria": "REG",
+      "durata": "1h 23m"
+    },
+    {
+      "id": "AAB",
+      "stazionePart": "Trento",
+      "stazioneArr": "Verona Porta Nuova",
+      "fermate": [
+        { "id": "Trento", "orario": "09:37" },
+        { "id": "Rovereto", "orario": "09:50" },
+        { "id": "Ala", "orario": "10:10" },
+        { "id": "Domegliara", "orario": "10:30" },
+        { "id": "Verona Porta Nuova", "orario": "10:52" }
+      ],
+      "categoria": "RV",
+      "durata": "1h 15m"
+    },
+    {
+      "id": "AAC",
+      "stazionePart": "Trento",
+      "stazioneArr": "Verona Porta Nuova",
+      "fermate": [
+        { "id": "Trento", "orario": "10:01" },
+        { "id": "Rovereto", "orario": "10:15" },
+        { "id": "Ala", "orario": "10:35" },
+        { "id": "Domegliara", "orario": "10:50" },
+        { "id": "Verona Porta Nuova", "orario": "11:07" }
+      ],
+      "categoria": "FrecciaRossa",
+      "durata": "1h 6m"
+    },
+    {
+      "id": "AAD",
+      "stazionePart": "Rovereto",
+      "stazioneArr": "Verona Porta Nuova",
+      "fermate": [
+        { "id": "Rovereto", "orario": "15:30" },
+        { "id": "Ala", "orario": "16:00" },
+        { "id": "Domegliara", "orario": "16:20" },
+        { "id": "Verona Porta Nuova", "orario": "16:40" }
+      ],
+      "categoria": "REG",
+      "durata": "1h 10m"
+    },
+    {
+      "id": "AAE",
+      "stazionePart": "Verona Porta Nuova",
+      "stazioneArr": "Bologna Centrale",
+      "fermate": [
+        {"id": "Verona Porta Nuova", "orario": "08:00"},
+        {"id": "Isola della Scala", "orario": "08:10"},
+        {"id": "Nogara", "orario": "08:20"},
+        {"id": "Ostiglia", "orario": "08:30"},
+        {"id": "Poggio Rusco", "orario": "08:40"},
+        {"id": "Mirandola", "orario": "08:50"},
+        {"id": "San Felice sul Panaro", "orario": "09:00"},
+        {"id": "Crevalcore", "orario": "09:10"},
+        {"id": "San Giovanni in Persiceto", "orario": "09:20"},
+        {"id": "Osteria Nuova", "orario": "09:30"},
+        {"id": "Bologna Centrale", "orario": "09:45"}
+      ],
+      "orarioPart": "08:00",
+      "orarioArr": "09:45",
+      "categoria": "REG",
+      "durata": "1h 45m"
+    },    
+    {
+      "id": "AAF",
+      "stazionePart": "Bologna Centrale",
+      "stazioneArr": "Bolzano",
+      "fermate": [
+        {"id": "Bologna Centrale", "orario": "08:00"},
+        {"id": "Osteria Nuova", "orario": "08:10"},
+        {"id": "San Giovanni in Persiceto", "orario": "08:20"},
+        {"id": "Crevalcore", "orario": "08:30"},
+        {"id": "San Felice sul Panaro", "orario": "08:40"},
+        {"id": "Mirandola", "orario": "08:50"},
+        {"id": "Poggio Rusco", "orario": "09:00"},
+        {"id": "Ostiglia", "orario": "09:10"},
+        {"id": "Nogara", "orario": "09:20"},
+        {"id": "Isola della Scala", "orario": "09:30"},
+        {"id": "Verona Porta Nuova", "orario": "09:40"},
+        {"id": "Domegliara", "orario": "09:50"},
+        {"id": "Ala", "orario": "10:00"},
+        {"id": "Rovereto", "orario": "10:10"},
+        {"id": "Trento", "orario": "10:20"},
+        {"id": "MezzoCorona", "orario": "10:40"},
+        {"id": "Ora", "orario": "10:50"},
+        {"id": "Bolzano", "orario": "11:15"}
+      ],
+      "orarioPart": "08:00",
+      "orarioArr": "11:15",
+      "categoria": "REG",
+      "durata": "3h 15m"
+    },
+    {
+      "id": "AAG",
+      "stazionePart": "Verona Porta Nuova",
+      "stazioneArr": "Milano Centrale",
+      "fermate": [
+        {"id": "Verona Porta Nuova", "orario": "07:00"},
+        {"id": "Peschiera del Garda", "orario": "07:15"},
+        {"id": "Desenzano del Garda-Sirmione", "orario": "07:30"},
+        {"id": "Brescia", "orario": "07:50"},
+        {"id": "Rovato", "orario": "08:05"},
+        {"id": "Treviglio", "orario": "08:25"},
+        {"id": "Milano Centrale", "orario": "08:50"}
+      ],
+      "orarioPart": "07:00",
+      "orarioArr": "08:50",
+      "categoria": "REG",
+      "durata": "1h 50m"
+    },
+    {
+      "id": "AAH",
+      "stazionePart": "Verona Porta Nuova",
+      "stazioneArr": "Milano Centrale",
+      "fermate": [
+        {"id": "Verona Porta Nuova", "orario": "09:00"},
+        {"id": "Desenzano del Garda-Sirmione", "orario": "09:20"},
+        {"id": "Brescia", "orario": "09:40"},
+        {"id": "Treviglio", "orario": "10:00"},
+        {"id": "Milano Centrale", "orario": "10:25"}
+      ],
+      "orarioPart": "09:00",
+      "orarioArr": "10:25",
+      "categoria": "RV",
+      "durata": "1h 25m"
+    },
+    {
+      "id": "AAI",
+      "stazionePart": "Verona Porta Nuova",
+      "stazioneArr": "Milano Centrale",
+      "fermate": [
+        {"id": "Verona Porta Nuova", "orario": "11:00"},
+        {"id": "Brescia", "orario": "11:35"},
+        {"id": "Milano Centrale", "orario": "12:10"}
+      ],
+      "orarioPart": "11:00",
+      "orarioArr": "12:10",
+      "categoria": "FR",
+      "durata": "1h 10m"
+    },
+    {
+      "id": "AAJ",
+      "stazionePart": "Milano Centrale",
+      "stazioneArr": "Verona Porta Nuova",
+      "fermate": [
+        {"id": "Milano Centrale", "orario": "15:00"},
+        {"id": "Treviglio", "orario": "15:25"},
+        {"id": "Rovato", "orario": "15:45"},
+        {"id": "Brescia", "orario": "16:00"},
+        {"id": "Desenzano del Garda-Sirmione", "orario": "16:20"},
+        {"id": "Peschiera del Garda", "orario": "16:35"},
+        {"id": "Verona Porta Nuova", "orario": "16:50"}
+      ],
+      "orarioPart": "15:00",
+      "orarioArr": "16:50",
+      "categoria": "REG",
+      "durata": "1h 50m"
+    },
+    {
+      "id": "AAK",
+      "stazionePart": "Milano Centrale",
+      "stazioneArr": "Verona Porta Nuova",
+      "fermate": [
+        {"id": "Milano Centrale", "orario": "17:00"},
+        {"id": "Treviglio", "orario": "17:20"},
+        {"id": "Brescia", "orario": "17:40"},
+        {"id": "Desenzano del Garda-Sirmione", "orario": "18:00"},
+        {"id": "Verona Porta Nuova", "orario": "18:25"}
+      ],
+      "orarioPart": "17:00",
+      "orarioArr": "18:25",
+      "categoria": "RV",
+      "durata": "1h 25m"
+    },
+    {
+      "id": "AAL",
+      "stazionePart": "Milano Centrale",
+      "stazioneArr": "Verona Porta Nuova",
+      "fermate": [
+        {"id": "Milano Centrale", "orario": "19:00"},
+        {"id": "Brescia", "orario": "19:35"},
+        {"id": "Verona Porta Nuova", "orario": "20:10"}
+      ],
+      "orarioPart": "19:00",
+      "orarioArr": "20:10",
+      "categoria": "FR",
+      "durata": "1h 10m"
+    }    
+  ]
+}
